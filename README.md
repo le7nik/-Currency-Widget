@@ -39,3 +39,7 @@ pip install -r requirements.txt
 
 # Запустить
 python Widget.py
+
+### Вариант 2: Запуск *.exe
+Скачайте файл `CurrencyWidget.exe`.
+Запустите его (файл создаст папку `logs` рядом с собой).  
