@@ -31,7 +31,10 @@ ALLOWED_HOSTS = {"www.cbr-xml-daily.ru", "api.coingecko.com"}
 # =====================================================================
 #  ЛОГИРОВАНИЕ (в папке проекта)
 # =====================================================================
-BASE_DIR = Path(__file__).resolve().parent
+if getattr(sys, 'frozen', False):
+    BASE_DIR = Path(sys.executable).parent   # Для .exe: папка, где лежит сам .exe
+else:
+    BASE_DIR = Path(__file__).resolve().parent  # Для .py: папка со скриптом
 LOG_DIR = BASE_DIR / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / "widget.log"
